@@ -5,3 +5,6 @@
 
 ### Para ejecutar:
 `./build/src/arbol`
+
+### Para ejecutar las pruebas unitarias:
+`./build/tests/BST_test `

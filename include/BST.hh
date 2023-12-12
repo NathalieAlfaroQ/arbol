@@ -27,7 +27,7 @@ public:
   BST() : raiz(nullptr) {}
 
   // Metodos
-  void insertarNodo(int valor);
+  bool insertarNodo(int valor);
   Nodo *insertarNodoRecursivo(Nodo *nodoActual, int valor);
   bool contieneValor(int numero);
 };

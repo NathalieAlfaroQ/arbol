@@ -51,7 +51,7 @@ void ExperimentoInsertar::insertarDesordenArbol(int operacionesTotal, int batch)
     for (int y = 0; y < batch; y++)
     {
       // Se busca un numero aleatorio
-      valor[x * batch +  y] = rand();
+      valor[y] = rand();
       arbol2->insertarNodo(valor[y]);
     }
     fin = chrono::high_resolution_clock::now();
@@ -84,10 +84,10 @@ void ExperimentoInsertar::insertarDesordenSet(int operacionesTotal, int batch)
 {
   for (int x = 0; x < operacionesTotal; x++)
   {
-    valor[x] = rand();
     inicio = chrono::high_resolution_clock::now();
     for (int y = 0; y < batch; y++)
     {
+      valor[y] = rand();
       arbolSet2.insert(valor[x]);
     }
     fin = chrono::high_resolution_clock::now();
@@ -120,10 +120,10 @@ void ExperimentoInsertar::insertarDesordenUnset(int operacionesTotal, int batch)
 {
   for (int x = 0; x < operacionesTotal; x++)
   {
-    valor[x] = rand();
     inicio = chrono::high_resolution_clock::now();
     for (int y = 0; y < batch; y++)
     {
+      valor[y] = rand();
       arbolUnset2.insert(valor[x]);
     }
     fin = chrono::high_resolution_clock::now();
@@ -136,11 +136,35 @@ void ExperimentoInsertar::insertarDesordenUnset(int operacionesTotal, int batch)
 // Insertar en orden vector
 void ExperimentoInsertar::insertarOrdenVector(int operacionesTotal, int batch)
 {
-  // ??????????
+  for (int x = 0; x < operacionesTotal; x++)
+  {
+    inicio = chrono::high_resolution_clock::now();
+    for (int y = 0; y < batch; y++)
+    {
+      arreglo.push_back(y + x * 10000);
+    }
+    fin = chrono::high_resolution_clock::now();
+    numeroOperacion[x] = x;
+    valor[x] = x;
+    diferencia = fin - inicio;
+    duracion[x] = diferencia.count();
+  }
 }
 
 // Insertar en desorden vector
 void ExperimentoInsertar::insertarDesordenVector(int operacionesTotal, int batch)
 {
-  // ??????????
+  for (int x = 0; x < operacionesTotal; x++)
+  {
+    inicio = chrono::high_resolution_clock::now();
+    for (int y = 0; y < batch; y++)
+    {
+      valor[y] = rand();
+      arreglo2.push_back(valor[x]);
+    }
+    fin = chrono::high_resolution_clock::now();
+    numeroOperacion[x] = x;
+    diferencia = fin - inicio;
+    duracion[x] = diferencia.count();
+  }
 }

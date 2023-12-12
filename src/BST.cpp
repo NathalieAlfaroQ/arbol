@@ -5,9 +5,10 @@
 using namespace std;
 
 // Agrega un nuevo nodo
-void BST::insertarNodo(int valor)
+bool BST::insertarNodo(int valor)
 {
   raiz = insertarNodoRecursivo(raiz, valor);
+  return true;
 } // End insertarNodo
 
 Nodo *BST::insertarNodoRecursivo(Nodo *nodoActual, int valor)
