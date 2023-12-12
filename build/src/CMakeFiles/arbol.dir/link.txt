@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/arbol.dir/main.cpp.o CMakeFiles/arbol.dir/BST.cpp.o CMakeFiles/arbol.dir/ExperimentoInsertar.cpp.o CMakeFiles/arbol.dir/ExperimentoContiene.cpp.o -o arbol 
