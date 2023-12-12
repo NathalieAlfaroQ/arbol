@@ -4,7 +4,7 @@
 
 ### Para compilar:
 
-`cmake -S . -B build && cmake --build build`
+`cmake -S . -B build && cmake --build build `
 
 
 ### Para ejecutar:

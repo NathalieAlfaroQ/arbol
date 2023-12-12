@@ -151,7 +151,6 @@ void ExperimentoContiene::contieneDesordenUnset(int operacionesTotal,
           operacionesTotal);
 }
 
-
 // Contiene en orden vector
 void ExperimentoContiene::contieneOrdenVector(int operacionesTotal, int batch)
 {
@@ -176,7 +175,6 @@ void ExperimentoContiene::contieneOrdenVector(int operacionesTotal, int batch)
   archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
 operacionesTotal);
 }
-
 
 // Contiene en desorden vector
 void ExperimentoContiene::contieneDesordenVector(int operacionesTotal, int
