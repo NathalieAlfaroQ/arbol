@@ -23,13 +23,13 @@ class ExperimentoContiene
 {
   // Estructuras
   BST *arbolC = new BST;
-  BST *arbol2 = new BST;
-  vector<int> arreglo;
-  vector<int> arreglo2;
-  set<int> arbolSet;
-  set<int> arbolSet2;
-  unordered_set<int> arbolUnset;
-  unordered_set<int> arbolUnset2;
+  BST *arbol2C = new BST;
+  vector<int> arregloC;
+  vector<int> arreglo2C;
+  set<int> arbolSetC;
+  set<int> arbolSet2C;
+  unordered_set<int> arbolUnsetC;
+  unordered_set<int> arbolUnset2C;
 
   // Tiempos
   chrono::high_resolution_clock::time_point inicio;
@@ -37,9 +37,9 @@ class ExperimentoContiene
   chrono::duration<double, nano> diferencia;
 
   // Guardar los datos
-  double *duracion = new double[100];
-  int *numeroOperacion = new int[100];
-  int *valor = new int[100];
+  double *duracionC = new double[100];
+  int *numeroOperacionC = new int[100];
+  int *valorC = new int[100];
 
   // Metodos:
   // Arbol

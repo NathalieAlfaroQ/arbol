@@ -32,7 +32,7 @@ void ExperimentoContiene::contieneOrdenArbol(int operacionesTotal, int batch)
     // Por batch
     for (int y = 0; y < batch; y++)
     {
-      arbol->insertarNodo(y + x * 10000);
+      arbolC->insertarNodo(y + x * 10000);
     }
     // Se termina de medir el tiempo de la insercion
     fin = chrono::high_resolution_clock::now();
