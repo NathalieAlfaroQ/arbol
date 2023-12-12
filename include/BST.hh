@@ -5,8 +5,7 @@ using namespace std;
 #ifndef BST_HH
 #define BST_HH
 
-class Nodo
-{
+class Nodo {
 public:
   // Atributos
   int valor;
@@ -17,8 +16,7 @@ public:
   Nodo(int valor) : valor(valor), izquierda(nullptr), derecha(nullptr) {}
 };
 
-class BST
-{
+class BST {
 public:
   Nodo *raiz;
 

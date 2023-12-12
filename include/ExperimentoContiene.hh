@@ -1,14 +1,15 @@
 // Bibliotecas
+#include <algorithm>
+#include <chrono>
 #include <iostream>
+#include <numeric>
+#include <random>
+#include <set>
 #include <time.h>
 #include <unistd.h>
-#include <chrono>
-#include <vector>
-#include <set>
 #include <unordered_set>
-#include <algorithm>
-#include <random>
-#include <numeric>
+#include <vector>
+#include <fstream>
 using namespace std;
 
 // Encabezados ajenos
@@ -19,8 +20,7 @@ using namespace std;
 #ifndef EXPERIMENTOCONTIENE_HH
 #define EXPERIMENTOCONTIENE_HH
 
-class ExperimentoContiene
-{
+class ExperimentoContiene {
   // Estructuras
   BST *arbolC = new BST;
   BST *arbol2C = new BST;
@@ -55,6 +55,7 @@ class ExperimentoContiene
   void contieneOrdenVector(int operacionesTotal, int batch);
   void contieneDesordenVector(int operacionesTotal, int batch);
   // Archivo
-  void archivo(const string &nombreArchivo, const int *numeroOperacion, const int *valor, const double *duracion, int operacionesTotal);
+  void archivo(const string &nombreArchivo, const int *numeroOperacion,
+               const int *valor, const double *duracion, int operacionesTotal);
 };
 #endif

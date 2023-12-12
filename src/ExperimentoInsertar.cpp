@@ -1,15 +1,15 @@
 // Bibliotecas
+#include <algorithm>
+#include <chrono>
+#include <fstream>
 #include <iostream>
+#include <numeric>
+#include <random>
+#include <set>
 #include <time.h>
 #include <unistd.h>
-#include <chrono>
-#include <vector>
-#include <set>
 #include <unordered_set>
-#include <algorithm>
-#include <random>
-#include <numeric>
-#include <fstream>
+#include <vector>
 using namespace std;
 
 // Encabezados
@@ -17,16 +17,13 @@ using namespace std;
 #include <ExperimentoInsertar.hh>
 
 // Insertar en orden por estructura de arbol
-void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch)
-{
+void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch) {
   // operacionesTotal
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+  for (int x = 0; x < operacionesTotal; x++) {
     // Se inicia a contar el tiempo de la insercion
     inicio = chrono::high_resolution_clock::now();
     // Por batch
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       arbol->insertarNodo(y + x * 10000);
     }
     // Se termina de medir el tiempo de la insercion
@@ -41,17 +38,16 @@ void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch)
     duracion[x] = diferencia.count();
     // Se imprime la duracion en nanosegundos
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Insertar aleatoriamente por estructura del arbol
-void ExperimentoInsertar::insertarDesordenArbol(int operacionesTotal, int batch)
-{
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+void ExperimentoInsertar::insertarDesordenArbol(int operacionesTotal,
+                                                int batch) {
+  for (int x = 0; x < operacionesTotal; x++) {
     inicio = chrono::high_resolution_clock::now();
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       // Se busca un numero aleatorio
       valor[y] = rand();
       arbol2->insertarNodo(valor[y]);
@@ -61,17 +57,15 @@ void ExperimentoInsertar::insertarDesordenArbol(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Insertar en orden por medio de Set
-void ExperimentoInsertar::insertarOrdenSet(int operacionesTotal, int batch)
-{
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+void ExperimentoInsertar::insertarOrdenSet(int operacionesTotal, int batch) {
+  for (int x = 0; x < operacionesTotal; x++) {
     inicio = chrono::high_resolution_clock::now();
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       arbolSet.insert(y + x * 10000);
     }
     fin = chrono::high_resolution_clock::now();
@@ -80,17 +74,15 @@ void ExperimentoInsertar::insertarOrdenSet(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Insertar en desorden por medio de Set
-void ExperimentoInsertar::insertarDesordenSet(int operacionesTotal, int batch)
-{
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+void ExperimentoInsertar::insertarDesordenSet(int operacionesTotal, int batch) {
+  for (int x = 0; x < operacionesTotal; x++) {
     inicio = chrono::high_resolution_clock::now();
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       valor[y] = rand();
       arbolSet2.insert(valor[x]);
     }
@@ -99,17 +91,15 @@ void ExperimentoInsertar::insertarDesordenSet(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Insertar en orden Unorderedset
-void ExperimentoInsertar::insertarOrdenUnset(int operacionesTotal, int batch)
-{
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+void ExperimentoInsertar::insertarOrdenUnset(int operacionesTotal, int batch) {
+  for (int x = 0; x < operacionesTotal; x++) {
     inicio = chrono::high_resolution_clock::now();
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       arbolUnset.insert(y + x * 10000);
     }
     fin = chrono::high_resolution_clock::now();
@@ -118,17 +108,16 @@ void ExperimentoInsertar::insertarOrdenUnset(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Insertar en desorden por medio de Unorderedset
-void ExperimentoInsertar::insertarDesordenUnset(int operacionesTotal, int batch)
-{
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+void ExperimentoInsertar::insertarDesordenUnset(int operacionesTotal,
+                                                int batch) {
+  for (int x = 0; x < operacionesTotal; x++) {
     inicio = chrono::high_resolution_clock::now();
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       valor[y] = rand();
       arbolUnset2.insert(valor[x]);
     }
@@ -137,17 +126,15 @@ void ExperimentoInsertar::insertarDesordenUnset(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Insertar en orden vector
-void ExperimentoInsertar::insertarOrdenVector(int operacionesTotal, int batch)
-{
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+void ExperimentoInsertar::insertarOrdenVector(int operacionesTotal, int batch) {
+  for (int x = 0; x < operacionesTotal; x++) {
     inicio = chrono::high_resolution_clock::now();
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       arreglo.push_back(y + x * 10000);
     }
     fin = chrono::high_resolution_clock::now();
@@ -156,17 +143,16 @@ void ExperimentoInsertar::insertarOrdenVector(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Insertar en desorden vector
-void ExperimentoInsertar::insertarDesordenVector(int operacionesTotal, int batch)
-{
-  for (int x = 0; x < operacionesTotal; x++)
-  {
+void ExperimentoInsertar::insertarDesordenVector(int operacionesTotal,
+                                                 int batch) {
+  for (int x = 0; x < operacionesTotal; x++) {
     inicio = chrono::high_resolution_clock::now();
-    for (int y = 0; y < batch; y++)
-    {
+    for (int y = 0; y < batch; y++) {
       valor[y] = rand();
       arreglo2.push_back(valor[x]);
     }
@@ -175,17 +161,19 @@ void ExperimentoInsertar::insertarDesordenVector(int operacionesTotal, int batch
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
+          operacionesTotal);
 }
 
 // Crear archivo csv
-void ExperimentoInsertar::archivo(const string &nombreArchivo, const int *numeroOperacion, const int *valor, const double *duracion, int operacionesTotal)
-{
+void ExperimentoInsertar::archivo(const string &nombreArchivo,
+                                  const int *numeroOperacion, const int *valor,
+                                  const double *duracion,
+                                  int operacionesTotal) {
   // Abrir el archivo en modo de escritura
   ofstream archivoCSV(nombreArchivo);
 
-  if (!archivoCSV.is_open())
-  {
+  if (!archivoCSV.is_open()) {
     cerr << "Error al abrir el archivo CSV." << endl;
     return;
   }
@@ -194,9 +182,9 @@ void ExperimentoInsertar::archivo(const string &nombreArchivo, const int *numero
   archivoCSV << "Numero operacion, Valor, duracion" << endl;
 
   // Escribir datos en el archivo CSV
-  for (size_t i = 0; i < operacionesTotal; ++i)
-  {
-    archivoCSV << numeroOperacion[i] << "," << valor[i] << "," << duracion[i] << endl;
+  for (size_t i = 0; i < operacionesTotal; ++i) {
+    archivoCSV << numeroOperacion[i] << "," << valor[i] << "," << duracion[i]
+               << endl;
   }
 
   // Cerrar el archivo
