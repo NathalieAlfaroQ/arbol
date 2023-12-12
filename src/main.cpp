@@ -36,14 +36,21 @@ int main() {
     if (experimento == 1) 
     {
       // Insertar en orden
+      cout << "insertarOrdenArbol" << endl;
       ExperimentoInsertar experimentoInsertarOrdenArbol(operacionesTotal, batch);
       experimentoInsertarOrdenArbol.insertarOrdenArbol(operacionesTotal, batch);
-
+      
+      cout << "insertarOrdenSet" << endl;
       ExperimentoInsertar experimentoInsertarOrdenSet(operacionesTotal, batch);
       experimentoInsertarOrdenSet.insertarOrdenSet(operacionesTotal, batch);
-
+      
+      cout << "insertarOrdenUnset" << endl;
       ExperimentoInsertar insertarOrdenUnset(operacionesTotal, batch);
+      insertarOrdenUnset.insertarOrdenUnset(operacionesTotal, batch);
+      
+      cout << "insertarOrdenVector" << endl;
       ExperimentoInsertar insertarOrdenVector(operacionesTotal, batch);
+      insertarOrdenVector.insertarOrdenVector(operacionesTotal, batch);
     }
     else if (experimento == 2) 
     {

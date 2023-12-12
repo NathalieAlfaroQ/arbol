@@ -30,6 +30,11 @@ valgrind --leak-check=full --show-leak-kinds=all ./build/src/arbol
 `clang-format -i main.cpp`
 
 
+### Cantidad de lineas por archivo:
+
+`wc -l insertar*`
+
+
 ### Créditos:
 
 - Nathalie Alfaro Quesada, B90221.
