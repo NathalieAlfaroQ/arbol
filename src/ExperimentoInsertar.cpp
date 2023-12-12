@@ -26,7 +26,7 @@ void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch)
     // Por batch
     for (int y = 0; y < batch; y++)
     {
-      arbol->insertarNodo(y + x * 100);
+      arbol->insertarNodo(y + x * 10000);
     }
     // Se termina de medir el tiempo de la insercion
     fin = chrono::high_resolution_clock::now();
@@ -47,12 +47,12 @@ void ExperimentoInsertar::insertarDesordenArbol(int operacionesTotal, int batch)
 {
   for (int x = 0; x < operacionesTotal; x++)
   {
-    // Se busca un numero aleatorio
-    valor[x] = rand();
     inicio = chrono::high_resolution_clock::now();
     for (int y = 0; y < batch; y++)
     {
-      arbol2->insertarNodo(valor[x]);
+      // Se busca un numero aleatorio
+      valor[x * batch +  y] = rand();
+      arbol2->insertarNodo(valor[y]);
     }
     fin = chrono::high_resolution_clock::now();
     numeroOperacion[x] = x;
@@ -69,7 +69,7 @@ void ExperimentoInsertar::insertarOrdenSet(int operacionesTotal, int batch)
     inicio = chrono::high_resolution_clock::now();
     for (int y = 0; y < batch; y++)
     {
-      arbolSet.insert(y + x * 100);
+      arbolSet.insert(y + x * 10000);
     }
     fin = chrono::high_resolution_clock::now();
     numeroOperacion[x] = x;
@@ -105,7 +105,7 @@ void ExperimentoInsertar::insertarOrdenUnset(int operacionesTotal, int batch)
     inicio = chrono::high_resolution_clock::now();
     for (int y = 0; y < batch; y++)
     {
-      arbolUnset.insert(y + x * 100);
+      arbolUnset.insert(y + x * 10000);
     }
     fin = chrono::high_resolution_clock::now();
     numeroOperacion[x] = x;

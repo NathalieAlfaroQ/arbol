@@ -36,9 +36,9 @@ class ExperimentoInsertar
   chrono::duration<double, nano> diferencia;
 
   // Guardar los datos
-  double *duracion = new double[100];
-  int *numeroOperacion = new int[100];
-  int *valor = new int[100];
+  double *duracion = new double[10000];
+  int *numeroOperacion = new int[10000];
+  int *valor = new int[10000];
 
   // Metodos:
   // Arbol
