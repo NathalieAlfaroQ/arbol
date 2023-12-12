@@ -31,11 +31,17 @@ int main() {
             "\n3-Buscar en orden.\n4-Buscar en desorden.\n";
     cin >> experimento;
 
+    cout << "Escogio el experimento: " << experimento << endl;
+
     if (experimento == 1) 
     {
       // Insertar en orden
-      ExperimentoInsertar insertarOrdenArbol(operacionesTotal, batch);
-      ExperimentoInsertar insertarOrdenSet(operacionesTotal, batch);
+      ExperimentoInsertar experimentoInsertarOrdenArbol(operacionesTotal, batch);
+      experimentoInsertarOrdenArbol.insertarOrdenArbol(operacionesTotal, batch);
+
+      ExperimentoInsertar experimentoInsertarOrdenSet(operacionesTotal, batch);
+      experimentoInsertarOrdenSet.insertarOrdenSet(operacionesTotal, batch);
+
       ExperimentoInsertar insertarOrdenUnset(operacionesTotal, batch);
       ExperimentoInsertar insertarOrdenVector(operacionesTotal, batch);
     }

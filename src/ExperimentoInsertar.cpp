@@ -12,12 +12,16 @@
 #include <vector>
 using namespace std;
 
+#include <iostream>
+
 // Encabezados
 #include <BST.hh>
 #include <ExperimentoInsertar.hh>
 
 // Insertar en orden por estructura de arbol
 void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch) {
+  cout << "se inicia el experimento" << endl;
+
   // operacionesTotal
   for (int x = 0; x < operacionesTotal; x++) {
     // Se inicia a contar el tiempo de la insercion
@@ -38,7 +42,12 @@ void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch) {
     duracion[x] = diferencia.count();
     // Se imprime la duracion en nanosegundos
   }
+
+  cout << "se completo el experimento" << endl;
+
   archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+
+  cout << "se guardo el archivo" << endl;
 }
 
 // Insertar aleatoriamente por estructura del arbol
