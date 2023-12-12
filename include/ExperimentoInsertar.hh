@@ -53,5 +53,7 @@ class ExperimentoInsertar
   // Vector
   void insertarOrdenVector(int operacionesTotal, int batch);
   void insertarDesordenVector(int operacionesTotal, int batch);
+  // Archivo
+  void archivo(const string &nombreArchivo, const int *numeroOperacion, const int *valor, const double *duracion, int operacionesTotal);
 };
 #endif

@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <random>
 #include <numeric>
+#include <fstream>
 using namespace std;
 
 // Encabezados
@@ -40,6 +41,7 @@ void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch)
     duracion[x] = diferencia.count();
     // Se imprime la duracion en nanosegundos
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar aleatoriamente por estructura del arbol
@@ -59,6 +61,7 @@ void ExperimentoInsertar::insertarDesordenArbol(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar en orden por medio de Set
@@ -77,6 +80,7 @@ void ExperimentoInsertar::insertarOrdenSet(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar en desorden por medio de Set
@@ -95,6 +99,7 @@ void ExperimentoInsertar::insertarDesordenSet(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar en orden Unorderedset
@@ -113,6 +118,7 @@ void ExperimentoInsertar::insertarOrdenUnset(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar en desorden por medio de Unorderedset
@@ -131,6 +137,7 @@ void ExperimentoInsertar::insertarDesordenUnset(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar en orden vector
@@ -149,6 +156,7 @@ void ExperimentoInsertar::insertarOrdenVector(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar en desorden vector
@@ -167,4 +175,32 @@ void ExperimentoInsertar::insertarDesordenVector(int operacionesTotal, int batch
     diferencia = fin - inicio;
     duracion[x] = diferencia.count();
   }
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
+}
+
+// Crear archivo csv
+void ExperimentoInsertar::archivo(const string &nombreArchivo, const int *numeroOperacion, const int *valor, const double *duracion, int operacionesTotal)
+{
+  // Abrir el archivo en modo de escritura
+  ofstream archivoCSV(nombreArchivo);
+
+  if (!archivoCSV.is_open())
+  {
+    cerr << "Error al abrir el archivo CSV." << endl;
+    return;
+  }
+
+  // Escribir encabezados en el archivo CSV
+  archivoCSV << "Numero operacion, Valor, duracion" << endl;
+
+  // Escribir datos en el archivo CSV
+  for (size_t i = 0; i < operacionesTotal; ++i)
+  {
+    archivoCSV << numeroOperacion[i] << "," << valor[i] << "," << duracion[i] << endl;
+  }
+
+  // Cerrar el archivo
+  archivoCSV.close();
+
+  cout << "Datos guardados en el archivo CSV exitosamente." << endl;
 }

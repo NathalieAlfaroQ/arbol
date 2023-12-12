@@ -34,34 +34,34 @@ int main()
     if (experimento == 1)
     {
       // Insertar en orden
-      void insertarOrdenArbol(int operacionesTotal, int batch);
-      void insertarOrdenSet(int operacionesTotal, int batch);
-      void insertarOrdenUnset(int operacionesTotal, int batch);
-      void insertarOrdenVector(int operacionesTotal, int batch);
+      insertarOrdenArbol(operacionesTotal, batch);
+      insertarOrdenSet(operacionesTotal, batch);
+      insertarOrdenUnset(operacionesTotal, batch);
+      insertarOrdenVector(operacionesTotal, batch);
     }
     else if (experimento == 2)
     {
       // Insertar en desorden
-      void insertarDesordenArbol(int operacionesTotal, int batch);
-      void insertarDesordenSet(int operacionesTotal, int batch);
-      void insertarDesordenUnset(int operacionesTotal, int batch);
-      void insertarDesordenVector(int operacionesTotal, int batch);
+      insertarDesordenArbol(operacionesTotal, batch);
+      insertarDesordenSet(operacionesTotal, batch);
+      insertarDesordenUnset(operacionesTotal, batch);
+      insertarDesordenVector(operacionesTotal, batch);
     }
     else if (experimento == 3)
     {
       // Buscar en orden
-      void contieneOrdenArbol(int operacionesTotal, int batch);
-      void contieneOrdenSet(int operacionesTotal, int batch);
-      void contieneOrdenUnset(int operacionesTotal, int batch);
-      void contieneOrdenVector(int operacionesTotal, int batch);
+      contieneOrdenArbol(operacionesTotal, batch);
+      contieneOrdenSet(operacionesTotal, batch);
+      contieneOrdenUnset(operacionesTotal, batch);
+      contieneOrdenVector(operacionesTotal, batch);
     }
     else if (experimento == 4)
     {
       // Buscar en desorden
-      void contieneDesordenArbol(int operacionesTotal, int batch);
-      void contieneDesordenSet(int operacionesTotal, int batch);
-      void contieneDesordenUnset(int operacionesTotal, int batch);
-      void contieneDesordenVector(int operacionesTotal, int batch);
+      contieneDesordenArbol(operacionesTotal, batch);
+      contieneDesordenSet(operacionesTotal, batch);
+      contieneDesordenUnset(operacionesTotal, batch);
+      contieneDesordenVector(operacionesTotal, batch);
     }
     else
     {

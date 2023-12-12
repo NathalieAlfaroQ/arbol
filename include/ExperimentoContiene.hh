@@ -54,5 +54,7 @@ class ExperimentoContiene
   // Vector
   void contieneOrdenVector(int operacionesTotal, int batch);
   void contieneDesordenVector(int operacionesTotal, int batch);
+  // Archivo
+  void archivo(const string &nombreArchivo, const int *numeroOperacion, const int *valor, const double *duracion, int operacionesTotal);
 };
 #endif
