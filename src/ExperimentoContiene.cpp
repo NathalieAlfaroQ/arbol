@@ -19,6 +19,33 @@ using namespace std;
 // Contiene en orden por estructura de arbol
 void ExperimentoContiene::contieneOrdenArbol(int operacionesTotal, int batch)
 {
+  for (int x = 0; x < 100000; x++) {
+    arbolC->insertarNodo(rand());
+    valor[x];
+  }
+
+  // operacionesTotal
+  for (int x = 0; x < operacionesTotal; x++)
+  {
+    // Se inicia a contar el tiempo de la insercion
+    inicio = chrono::high_resolution_clock::now();
+    // Por batch
+    for (int y = 0; y < batch; y++)
+    {
+      arbol->insertarNodo(y + x * 10000);
+    }
+    // Se termina de medir el tiempo de la insercion
+    fin = chrono::high_resolution_clock::now();
+    // Se guarda el numero de operacion en el arreglo
+    numeroOperacion[x] = x;
+    // Se guarda el numero en el arreglo
+    valor[x] = x;
+    // Se busca la duracion, para guardarla en el arreglo
+    diferencia = fin - inicio;
+    // Se guarda la duracion en nanosegundos
+    duracion[x] = diferencia.count();
+    // Se imprime la duracion en nanosegundos
+  }
 }
 
 // Contiene aleatoriamente por estructura del arbol

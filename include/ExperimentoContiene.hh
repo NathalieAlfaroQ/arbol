@@ -22,7 +22,7 @@ using namespace std;
 class ExperimentoContiene
 {
   // Estructuras
-  BST *arbol = new BST;
+  BST *arbolC = new BST;
   BST *arbol2 = new BST;
   vector<int> arreglo;
   vector<int> arreglo2;

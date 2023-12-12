@@ -7,4 +7,4 @@
 `./build/src/arbol`
 
 ### Para ejecutar las pruebas unitarias:
-`./build/tests/BST_test `
+`./build/tests/arbol_test `
