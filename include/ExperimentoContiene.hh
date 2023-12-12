@@ -21,6 +21,7 @@ using namespace std;
 #define EXPERIMENTOCONTIENE_HH
 
 class ExperimentoContiene {
+  public:
   // Atributos
   int operacionesTotal, batch;
 

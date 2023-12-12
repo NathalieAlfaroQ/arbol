@@ -9,7 +9,7 @@
 
 ### Para ejecutar:
 
-`./build/src/arbol`
+`./build/src/arbol `
 
 ### Para ejecutar las pruebas unitarias:
 

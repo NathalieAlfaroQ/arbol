@@ -38,8 +38,7 @@ void ExperimentoInsertar::insertarOrdenArbol(int operacionesTotal, int batch) {
     duracion[x] = diferencia.count();
     // Se imprime la duracion en nanosegundos
   }
-  archivo("datosFinales.csv", numeroOperacion, valor, duracion,
-          operacionesTotal);
+  archivo("datosFinales.csv", numeroOperacion, valor, duracion, operacionesTotal);
 }
 
 // Insertar aleatoriamente por estructura del arbol

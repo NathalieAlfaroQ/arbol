@@ -20,6 +20,7 @@ using namespace std;
 #define EXPERIMENTOINSERTAR_HH
 
 class ExperimentoInsertar {
+  public:
   // Atributos
   int operacionesTotal, batch;
 
