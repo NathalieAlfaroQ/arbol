@@ -150,13 +150,14 @@ void ExperimentoContiene::contieneDesordenUnset(int operacionesTotal,
   archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
           operacionesTotal);
 }
-/*
+
+
 // Contiene en orden vector
 void ExperimentoContiene::contieneOrdenVector(int operacionesTotal, int batch)
 {
   for (int insercion = 0; insercion < 100000; insercion++)
   {
-    arregloC.insert(rand());
+    arregloC.push_back(rand());
   }
 
   for (int x = 0; x < operacionesTotal; x++)
@@ -164,7 +165,7 @@ void ExperimentoContiene::contieneOrdenVector(int operacionesTotal, int batch)
     inicio = chrono::high_resolution_clock::now();
     for (int y = 0; y < batch; y++)
     {
-      arregloC.find(y);
+      find (arregloC.begin(), arregloC.end(), y);
     }
     fin = chrono::high_resolution_clock::now();
     numeroOperacionC[x] = x;
@@ -175,8 +176,8 @@ void ExperimentoContiene::contieneOrdenVector(int operacionesTotal, int batch)
   archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
 operacionesTotal);
 }
-*/
-/*
+
+
 // Contiene en desorden vector
 void ExperimentoContiene::contieneDesordenVector(int operacionesTotal, int
 batch)
@@ -184,7 +185,7 @@ batch)
   // Insertar mil numeros aleatorios
   for (int insercion = 0; insercion < 1000; insercion++)
   {
-    arreglo2C.insert(rand());
+    arreglo2C.push_back(rand());
   }
   // Medicion
   for (int x = 0; x < operacionesTotal; x++)
@@ -194,7 +195,7 @@ batch)
     for (int y = 0; y < batch; y++)
     {
       valorC[y] = rand();
-      arreglo2C.find(valorC[y]);
+      find (arreglo2C.begin(), arreglo2C.end(), valorC[y]);
     }
     fin = chrono::high_resolution_clock::now();
     numeroOperacionC[x] = x;
@@ -204,7 +205,7 @@ batch)
   archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
 operacionesTotal);
 }
-*/
+
 // Crear archivo csv
 void ExperimentoContiene::archivo(const string &nombreArchivo,
                                   const int *numeroOperacion, const int *valor,
