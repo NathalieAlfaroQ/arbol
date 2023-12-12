@@ -4,4 +4,4 @@
 `cmake -S . -B build && cmake --build build`
 
 ### Para ejecutar:
-`./build/src/Proyecto3`
+`./build/src/arbol`
