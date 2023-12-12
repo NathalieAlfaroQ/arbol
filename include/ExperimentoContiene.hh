@@ -21,6 +21,12 @@ using namespace std;
 #define EXPERIMENTOCONTIENE_HH
 
 class ExperimentoContiene {
+  // Atributos
+  int operacionesTotal, batch;
+
+  // Constructor
+  ExperimentoContiene(int operacionesTotal, int batch) : operacionesTotal(operacionesTotal), batch(batch) {}
+  
   // Estructuras
   BST *arbolC = new BST;
   BST *arbol2C = new BST;

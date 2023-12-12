@@ -20,6 +20,12 @@ using namespace std;
 #define EXPERIMENTOINSERTAR_HH
 
 class ExperimentoInsertar {
+  // Atributos
+  int operacionesTotal, batch;
+
+  // Constructor
+  ExperimentoInsertar(int operacionesTotal, int batch) : operacionesTotal(operacionesTotal), batch(batch) {}
+
   // Estructuras
   BST *arbol = new BST;
   BST *arbol2 = new BST;

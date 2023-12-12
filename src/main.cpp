@@ -12,6 +12,7 @@
 
 #include <BST.hh>
 #include <ExperimentoInsertar.hh>
+#include <ExperimentoContiene.hh>
 
 using namespace std;
 
@@ -30,31 +31,40 @@ int main() {
             "\n3-Buscar en orden.\n4-Buscar en desorden.\n";
     cin >> experimento;
 
-    if (experimento == 1) {
+    if (experimento == 1) 
+    {
       // Insertar en orden
-      insertarOrdenArbol(operacionesTotal, batch);
-      insertarOrdenSet(operacionesTotal, batch);
-      insertarOrdenUnset(operacionesTotal, batch);
-      insertarOrdenVector(operacionesTotal, batch);
-    } else if (experimento == 2) {
+      ExperimentoInsertar insertarOrdenArbol(operacionesTotal, batch);
+      ExperimentoInsertar insertarOrdenSet(operacionesTotal, batch);
+      ExperimentoInsertar insertarOrdenUnset(operacionesTotal, batch);
+      ExperimentoInsertar insertarOrdenVector(operacionesTotal, batch);
+    }
+    else if (experimento == 2) 
+    {
       // Insertar en desorden
-      insertarDesordenArbol(operacionesTotal, batch);
-      insertarDesordenSet(operacionesTotal, batch);
-      insertarDesordenUnset(operacionesTotal, batch);
-      insertarDesordenVector(operacionesTotal, batch);
-    } else if (experimento == 3) {
+      ExperimentoInsertar insertarDesordenArbol(operacionesTotal, batch);
+      ExperimentoInsertar insertarDesordenSet(operacionesTotal, batch);
+      ExperimentoInsertar insertarDesordenUnset(operacionesTotal, batch);
+      ExperimentoInsertar insertarDesordenVector(operacionesTotal, batch);
+    } 
+    else if (experimento == 3) 
+    {
       // Buscar en orden
-      contieneOrdenArbol(operacionesTotal, batch);
-      contieneOrdenSet(operacionesTotal, batch);
-      contieneOrdenUnset(operacionesTotal, batch);
-      contieneOrdenVector(operacionesTotal, batch);
-    } else if (experimento == 4) {
+      ExperimentoContiene contieneOrdenArbol(operacionesTotal, batch);
+      ExperimentoContiene contieneOrdenSet(operacionesTotal, batch);
+      ExperimentoContiene contieneOrdenUnset(operacionesTotal, batch);
+      ExperimentoContiene contieneOrdenVector(operacionesTotal, batch);
+    } 
+    else if (experimento == 4) 
+    {
       // Buscar en desorden
-      contieneDesordenArbol(operacionesTotal, batch);
-      contieneDesordenSet(operacionesTotal, batch);
-      contieneDesordenUnset(operacionesTotal, batch);
-      contieneDesordenVector(operacionesTotal, batch);
-    } else {
+      ExperimentoContiene contieneDesordenArbol(operacionesTotal, batch);
+      ExperimentoContiene contieneDesordenSet(operacionesTotal, batch);
+      ExperimentoContiene contieneDesordenUnset(operacionesTotal, batch);
+      ExperimentoContiene contieneDesordenVector(operacionesTotal, batch);
+    } 
+    else 
+    {
       throw invalid_argument("Solo puede digitar 1, 2, 3 o 4.");
     }
   } catch (invalid_argument &e) {
