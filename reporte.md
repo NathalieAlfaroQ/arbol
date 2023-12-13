@@ -41,6 +41,13 @@ Resultados observados:
 - La duracion de guardar los datos en un vector es similar, ya sea en orden o desorden.
 
 
+Nota: 
+- Solo se muestran estos graficos ya que los otros no se pudieron ejecutar por segmentation fault.
+- Operaciones total = 1000
+- Batch = 100
+
+
+
 
 
 
