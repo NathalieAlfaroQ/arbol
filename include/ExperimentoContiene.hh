@@ -28,16 +28,6 @@ class ExperimentoContiene {
   // Constructor
   ExperimentoContiene(int operacionesTotal, int batch) : operacionesTotal(operacionesTotal), batch(batch) {}
   
-  // Estructuras
-  BST *arbolC = new BST;
-  BST *arbol2C = new BST;
-  vector<int> arregloC;
-  vector<int> arreglo2C;
-  set<int> arbolSetC;
-  set<int> arbolSet2C;
-  unordered_set<int> arbolUnsetC;
-  unordered_set<int> arbolUnset2C;
-
   // Tiempos
   chrono::high_resolution_clock::time_point inicio;
   chrono::high_resolution_clock::time_point fin;

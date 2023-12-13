@@ -55,26 +55,59 @@ int main() {
     else if (experimento == 2) 
     {
       // Insertar en desorden
+      cout << "insertarDesordenArbol" << endl;
       ExperimentoInsertar insertarDesordenArbol(operacionesTotal, batch);
+      insertarDesordenArbol.insertarDesordenArbol(operacionesTotal, batch);
+
+      cout << "insertarDesordenSet" << endl;
       ExperimentoInsertar insertarDesordenSet(operacionesTotal, batch);
+      insertarDesordenSet.insertarDesordenSet(operacionesTotal, batch);
+      
+      cout << "insertarDesordenUnset" << endl;
       ExperimentoInsertar insertarDesordenUnset(operacionesTotal, batch);
+      insertarDesordenUnset.insertarDesordenUnset(operacionesTotal, batch);
+
+      cout << "insertarDesordenVector" << endl;
       ExperimentoInsertar insertarDesordenVector(operacionesTotal, batch);
+      insertarDesordenVector.insertarDesordenVector(operacionesTotal, batch);
     } 
     else if (experimento == 3) 
     {
       // Buscar en orden
-      ExperimentoContiene contieneOrdenArbol(operacionesTotal, batch);
+     // cout << "contieneOrdenArbol" << endl;
+      //ExperimentoContiene contieneOrdenArbol(operacionesTotal, batch);
+     // contieneOrdenArbol.contieneOrdenArbol(operacionesTotal, batch);
+
+      cout << "contieneOrdenSet" << endl;
       ExperimentoContiene contieneOrdenSet(operacionesTotal, batch);
+      contieneOrdenSet.contieneOrdenSet(operacionesTotal, batch);
+
+      cout << "contieneOrdenUnset" << endl;
       ExperimentoContiene contieneOrdenUnset(operacionesTotal, batch);
+      contieneOrdenUnset.contieneOrdenUnset(operacionesTotal, batch);
+
+      cout << "contieneOrdenVector" << endl;
       ExperimentoContiene contieneOrdenVector(operacionesTotal, batch);
+      contieneOrdenVector.contieneOrdenVector(operacionesTotal, batch);
     } 
     else if (experimento == 4) 
     {
       // Buscar en desorden
+      cout << "contieneDesordenArbol" << endl;
       ExperimentoContiene contieneDesordenArbol(operacionesTotal, batch);
+      contieneDesordenArbol.contieneDesordenArbol(operacionesTotal, batch);
+      
+      cout << "contieneDesordenSet" << endl;
       ExperimentoContiene contieneDesordenSet(operacionesTotal, batch);
+      contieneDesordenSet.contieneDesordenSet(operacionesTotal, batch);
+     
+      cout << "contieneDesordenUnset" << endl;
       ExperimentoContiene contieneDesordenUnset(operacionesTotal, batch);
+      contieneDesordenUnset.contieneDesordenUnset(operacionesTotal, batch);
+      
+      cout << "contieneDesordenVector" << endl;
       ExperimentoContiene contieneDesordenVector(operacionesTotal, batch);
+      contieneDesordenVector.contieneDesordenVector(operacionesTotal, batch);
     } 
     else 
     {

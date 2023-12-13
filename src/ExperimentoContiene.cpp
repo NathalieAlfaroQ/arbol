@@ -23,6 +23,7 @@ using namespace std;
 
 // Contiene en orden por estructura de arbol
 void ExperimentoContiene::contieneOrdenArbol(int operacionesTotal, int batch) {
+  BST *arbolC = new BST();
   for (int insercion = 0; insercion < 100000; insercion++) {
     arbolC->insertarNodo(rand());
   }
@@ -38,13 +39,14 @@ void ExperimentoContiene::contieneOrdenArbol(int operacionesTotal, int batch) {
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneOrdenArbol.csv", numeroOperacionC, valorC, duracionC,
           operacionesTotal);
 }
 
 // Contiene aleatoriamente por estructura del arbol
 void ExperimentoContiene::contieneDesordenArbol(int operacionesTotal,
                                                 int batch) {
+  BST *arbol2C = new BST();
   // Insertar mil nodos aleatorios
   for (int insercion = 0; insercion < 1000; insercion++) {
     arbol2C->insertarNodo(rand());
@@ -62,12 +64,13 @@ void ExperimentoContiene::contieneDesordenArbol(int operacionesTotal,
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneDesordenArbol.csv", numeroOperacionC, valorC, duracionC,
           operacionesTotal);
 }
 
 // Contiene en orden por medio de Set
 void ExperimentoContiene::contieneOrdenSet(int operacionesTotal, int batch) {
+  set<int> arbolSetC;
   for (int insercion = 0; insercion < 100000; insercion++) {
     arbolSetC.insert(rand());
   }
@@ -83,12 +86,13 @@ void ExperimentoContiene::contieneOrdenSet(int operacionesTotal, int batch) {
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneOrdenSet.csv", numeroOperacionC, valorC, duracionC,
           operacionesTotal);
 }
 
 // Contiene en desorden por medio de Set
 void ExperimentoContiene::contieneDesordenSet(int operacionesTotal, int batch) {
+  set<int> arbolSet2C;
   for (int insercion = 0; insercion < 1000; insercion++) {
     arbolSet2C.insert(rand());
   }
@@ -104,12 +108,13 @@ void ExperimentoContiene::contieneDesordenSet(int operacionesTotal, int batch) {
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneDesordenSet.csv", numeroOperacionC, valorC, duracionC,
           operacionesTotal);
 }
 
 // Contiene en orden Unorderedset
 void ExperimentoContiene::contieneOrdenUnset(int operacionesTotal, int batch) {
+  unordered_set<int> arbolUnsetC;
   for (int insercion = 0; insercion < 100000; insercion++) {
     arbolUnsetC.insert(rand());
   }
@@ -125,13 +130,14 @@ void ExperimentoContiene::contieneOrdenUnset(int operacionesTotal, int batch) {
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneOrdenUnset.csv", numeroOperacionC, valorC, duracionC,
           operacionesTotal);
 }
 
 // Contiene en desorden por medio de Unorderedset
 void ExperimentoContiene::contieneDesordenUnset(int operacionesTotal,
                                                 int batch) {
+  unordered_set<int> arbolUnset2C;
   for (int insercion = 0; insercion < 1000; insercion++) {
     arbolUnset2C.insert(rand());
   }
@@ -147,13 +153,14 @@ void ExperimentoContiene::contieneDesordenUnset(int operacionesTotal,
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneDesordenUnset.csv", numeroOperacionC, valorC, duracionC,
           operacionesTotal);
 }
 
 // Contiene en orden vector
 void ExperimentoContiene::contieneOrdenVector(int operacionesTotal, int batch)
 {
+  vector<int> arregloC;
   for (int insercion = 0; insercion < 100000; insercion++)
   {
     arregloC.push_back(rand());
@@ -172,7 +179,7 @@ void ExperimentoContiene::contieneOrdenVector(int operacionesTotal, int batch)
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneOrdenVector.csv", numeroOperacionC, valorC, duracionC,
 operacionesTotal);
 }
 
@@ -180,6 +187,7 @@ operacionesTotal);
 void ExperimentoContiene::contieneDesordenVector(int operacionesTotal, int
 batch)
 {
+  vector<int> arreglo2C;
   // Insertar mil numeros aleatorios
   for (int insercion = 0; insercion < 1000; insercion++)
   {
@@ -200,7 +208,7 @@ batch)
     diferencia = fin - inicio;
     duracionC[x] = diferencia.count();
   }
-  archivo("datosFinales.csv", numeroOperacionC, valorC, duracionC,
+  archivo("contieneDesordenVector.csv", numeroOperacionC, valorC, duracionC,
 operacionesTotal);
 }
 
